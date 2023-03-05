@@ -4,16 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyserProblem
+namespace MoodAnalyser
 {
-    public class MoodAnalyser
+    public class MoodAnalyzerProblem
     {
-        string message;
-        public string MoodAnalyseProblem(string message)
-        {
-            this.message = message;
-        }
-        public string AnalyseMood()
+        public string AnaylseMood(string message)
         {
             if (message.Contains("Sad"))
             {
