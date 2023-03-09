@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MoodAnalyserProblem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MoodAnalyserProblem.MoodAnalysisException;
 
 namespace MoodAnalyser
 {
@@ -17,6 +19,8 @@ namespace MoodAnalyser
         {
             try
             {
+                if (message.Equals(string.Empty))
+                    throw new MoodAnalysisException(MoodAnalysisExceptionType.EmptyString, "Message is empty.");
                 if (message.Contains("Sad"))
                     return "Sad";
                 else
@@ -25,7 +29,7 @@ namespace MoodAnalyser
             catch (NullReferenceException)
             {
 
-                return "Happy";
+                throw new MoodAnalysisException(MoodAnalysisExceptionType.NullMood, "Message is null.");
             }
 
         }
